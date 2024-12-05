@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Топ вакансии</title>
+    <style>
+        
+        /* Центрирование с помощью Flexbox */
+        .centered {                                                         
+            display: flex;
+            justify-content: center; /* Горизонтальное выравнивание */
+            align-items: center; /* Вертикальное выравнивание */
+            height: 100vh; /* Высота на весь экран */
+            text-align: center; /* Центрирование текста */
+        }
+
+        body {
+            margin: 0; /* Убираем отступы у body */
+        }
+        /* Общие стили */
+
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* Верхний блок */
+header {
+    background-color: #007bff; /* Синий фон */
+    color: #fff; /* Белый текст */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Разделяет элементы по сторонам */
+    flex-wrap: wrap; /* Для адаптивного отображения */
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    flex: 1;
+    text-align: left;
+}
+
+header nav {
+    flex: 2;
+    display: flex;
+    justify-content: center; /* Центрирует меню */
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px; /* Расстояние между пунктами меню */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #ffd700; /* Золотистый цвет при наведении */
+}
+
+.header-contact {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px; /* Расстояние между кнопками */
+    flex: 1;
+}
+
+.header-contact .phone {
+    font-weight: bold;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.login-btn,
+.publish-btn {
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover,
+.publish-btn:hover {
+    background-color: #ffc107; /* Более тёмный золотистый при наведении */
+}
+
+/* Секция с вакансиями */
+.vacancies {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+.vacancies h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.vacancies p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Карточки вакансий */
+
+.vacancy-cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Симметричная сетка */
+    gap: 20px; /* Увеличенное расстояние между карточками */
+    justify-content: center; /* Центрирует карточки */
+    margin-top: 15px;
+}
+
+.vacancy-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.vacancy-card:hover {
+    transform: translateY(-5px); /* Поднимает карточку при наведении */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Увеличивает тень */
+}
+
+.vacancy-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.vacancy-card p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.vacancy-card .details-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.vacancy-card .details-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span>НайтиРаботу.рф</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Главная</a></li>
+                    <li><a href="/indexv.html" class="active">Поиск работы</a></li>
+                    <li><a href="/indexz.html">Топ вакансии</a></li>
+                    <li><a href="#">Кандидаты</a></li>
+                    <li><a href="#">Тех. поддержка</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <button class="login-btn">Вход</button>
+                <button class="publish-btn">Новая публикация</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="search-results">
+            <div class="container">
+                <h1>Самые популярные вакансии сегодня: 
+                </h1>
+                
+                
+
+                <div class="vacancy-cards">
+                    <!-- Карточка вакансии -->
+                    <div class="vacancy-card">
+                        <h3>Frontend-разработчик</h3>
+                        <p>Компания: TechCorp</p>
+                        <p>Зарплата: 120,000 руб/мес</p>
+                        <p>Локация: Москва</p>
+                        <a href="#" class="details-btn">Подробнее</a>
+                    </div>
+                    <div class="vacancy-card">
+                        <h3>UI/UX Дизайнер</h3>
+                        <p>Компания: DesignPro</p>
+                        <p>Зарплата: 100,000 руб/мес</p>
+                        <p>Локация: Санкт-Петербург</p>
+                        <a href="#" class="details-btn">Подробнее</a>
+                    </div>
+                    <div class="vacancy-card">
+                        <h3>Менеджер проектов</h3>
+                        <p>Компания: BizSolutions</p>
+                        <p>Зарплата: 150,000 руб/мес</p>
+                        <p>Локация: Екатеринбург</p>
+                        <a href="#" class="details-btn">Подробнее</a>
+                    </div>
+                    <div class="vacancy-card">
+                        <h3>Тестировщик ПО</h3>
+                        <p>Компания: SoftTest</p>
+                        <p>Зарплата: 90,000 руб/мес</p>
+                        <p>Локация: Новосибирск</p>
+                        <a href="#" class="details-btn">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 НайтиРаботу.рф. Все права защищены.</p>   
+        </div>
+    </footer>
+</body>
+</html>

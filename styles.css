@@ -1,0 +1,338 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Разделяет лого, меню и контакты */
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+header .logo {
+    flex: 1;
+    text-align: left;
+}
+
+header nav {
+    flex: 2;
+    display: flex;
+    justify-content: center; /* Центрирует меню */
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px; /* Расстояние между пунктами меню */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.header-contact {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px; /* Разделяет кнопки */
+}
+
+.header-contact .phone {
+    font-weight: bold;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.login-btn,
+.publish-btn {
+    padding: 10px 20px;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-btn:hover,
+.publish-btn:hover {
+    background-color: #ffc107;
+}
+/* Стили для хедера */
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 0;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #ffdd57;
+}
+
+.header-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-contact .phone {
+    font-weight: bold;
+}
+
+.login-btn,
+.publish-btn {
+    background-color: #ffdd57;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover,
+.publish-btn:hover {
+    background-color: #ffd700;
+}
+
+/* Hero section */
+.hero {
+    background-color: #007bff;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 600px;
+    border: none;
+    border-radius: 10px;
+}
+
+.search-bar button {
+    padding: 10px;
+    border: none;
+    background-color: #ffdd57;
+    color: #333;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #ffd700;
+}
+
+/* Stats section */
+.stats {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.stat-card {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+.stat-card h3 {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* Popular vacancies */
+.popular-vacancies {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.popular-vacancies h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+.vacancy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.vacancy-item {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение текста */
+    justify-content: center; /* Центрирует текст по вертикали */
+    align-items: center; /* Центрирует текст по горизонтали */
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: 150px; /* Задаем фиксированную высоту карточки */
+}
+
+.vacancy-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.vacancy-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.vacancy-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/* How to find job */
+.how-to-find-job {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.how-to-find-job h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.step {
+    display: flex;
+    flex-direction: column; /* Элементы располагаются вертикально */
+    align-items: center;
+    text-align: center;
+    max-width: 200px;
+    gap: 10px; /* Отступ между иконкой и текстом */
+}
+
+.step img {
+    width: 48px; /* Размер иконки */
+    height: auto;
+}
+
+.step p {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+
+
+
+
+/* Popular categories */
+.popular-categories {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.popular-categories h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.category-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.category-item {
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0;
+}
